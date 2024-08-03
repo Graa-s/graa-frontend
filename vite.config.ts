@@ -9,6 +9,7 @@ export default defineConfig({
     react(),
     svgr(),
   ],
+  base: './',
   build: {
     outDir: path.resolve(__dirname, 'docs'),
     assetsInlineLimit: 0,
