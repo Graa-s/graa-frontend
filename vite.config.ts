@@ -9,7 +9,10 @@ export default defineConfig({
     react(),
     svgr(),
   ],
-  build: { assetsInlineLimit: 0 },
+  build: {
+    outDir: path.resolve(__dirname, 'docs'),
+    assetsInlineLimit: 0,
+  },
 
   resolve: {
     alias: [
