@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Badge } from 'components/styled';
 import { border, borderRadius } from 'constants/styled';
 
 export const Content = styled.main`
@@ -14,6 +15,11 @@ export const ImageWrapper = styled.div`
 
 export const NftImage = styled.img`
   border-radius: ${borderRadius}px;
+`;
+
+export const NftBadge = styled(Badge)`
+  padding: 15px;
+  font-size: 16px;
 `;
 
 export const NftInfo = styled.div`

@@ -36,7 +36,6 @@ export const Name = styled.h2`
 export const Description = styled.p`
   margin-top: 11px;
   width: 371px;
-  font-size: 14px;
 `;
 
 export const CollectionProperties = styled.ul`

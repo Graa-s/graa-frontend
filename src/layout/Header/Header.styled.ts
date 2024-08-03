@@ -3,7 +3,7 @@ import { border } from 'constants/styled';
 
 export const StyledHeader = styled.header`
   padding-inline: 53px;
-  height: 120px;
+  height: 90px;
   display: flex;
   align-items: center;
   gap: 20px;

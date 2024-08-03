@@ -2,12 +2,12 @@ import { Link } from 'react-router-dom';
 import { Footer, Header } from 'layout';
 import {
   Content, ImageWrapper, NftImage,
-  NftInfo, SaleStatusWrapper,
+  NftBadge, NftInfo, SaleStatusWrapper,
   SaleStatus, NftMain, NftNameWrapper,
   ActionButtonWrapper, PropertiesTitle,
   PropertiesList,
 } from './Nft.styled';
-import { Button, Badge, VerifiedIcon } from 'components/styled';
+import { Button, VerifiedIcon } from 'components/styled';
 import { shareIcon, plusIcon, TonIcon } from 'assets/icons';
 import Property from 'components/Property';
 
@@ -26,10 +26,10 @@ function Nft() {
     <Content>
       <ImageWrapper>
         <NftImage src={'https://picsum.photos/600/600'} width={600} height={600} alt="" />
-        <Badge>
+        <NftBadge>
           <TonIcon />
           <span>20 ≈ 2.000$</span>
-        </Badge>
+        </NftBadge>
       </ImageWrapper>
 
       <NftInfo>
