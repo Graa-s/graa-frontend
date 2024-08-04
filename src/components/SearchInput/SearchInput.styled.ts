@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Input } from 'components/styled';
-import { searchIcon } from 'assets/icons';
+import { SearchIcon } from 'assets/icons';
 
 export const SearchInputWrapper = styled.div`
   position: relative;
@@ -11,9 +11,14 @@ export const StyledSearchInput = styled(Input)<{ $width?: number }>`
   ${(props) => props.$width && `width: ${props.$width}px;`}
   font-size: 16px;
   font-weight: 500;
+  color: inherit;
+  
+  &::placeholder {
+    color: ${props => props.theme.hintColor};
+  }
 `;
 
-export const SearchInputIcon = styled.span`
+export const SearchInputIcon = styled(SearchIcon)`
   position: absolute;
   top: 50%;
   left: 10px;
@@ -21,6 +26,6 @@ export const SearchInputIcon = styled.span`
   width: 28px;
   height: 28px;
   display: inline-block;
-  background: url(${searchIcon}) center no-repeat;
   pointer-events: none;
+  color: ${props => props.theme.hintColor};
 `;

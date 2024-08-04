@@ -5,7 +5,9 @@ export type DynamicThemeProperties =
   'border' |
   'backgroundColor' |
   'hoverBackgroundColor' |
-  'color';
+  'color' |
+  'hintColor' |
+  'scrollbarThumbColor';
 
 type DynamicTheme = Pick<Theme, DynamicThemeProperties>;
 

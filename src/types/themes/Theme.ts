@@ -12,8 +12,10 @@ type Theme = {
   backgroundColor: string;
   hoverBackgroundColor: string;
   color: string;
+  hintColor: string;
   /** @units ms */
   transitionDuration: number;
+  scrollbarThumbColor: string;
 };
 
 export default Theme;

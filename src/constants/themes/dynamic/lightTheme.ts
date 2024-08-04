@@ -6,6 +6,8 @@ const lightTheme: DynamicTheme = {
   backgroundColor: 'white',
   hoverBackgroundColor: '#F4F4F4',
   color: 'black',
+  hintColor: '#55555580',
+  scrollbarThumbColor: '#D9D9D9',
 };
 
 export default lightTheme;

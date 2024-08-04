@@ -5,7 +5,7 @@ export default css`
     *,
     :after,
     :before {
-      scrollbar-color: #D9D9D9 transparent;
+      scrollbar-color: ${props => props.theme.scrollbarThumbColor} transparent;
       scrollbar-width: thin;
     }
   }
@@ -17,6 +17,6 @@ export default css`
 
   ::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    background: #D9D9D9;
+    background-color: ${props => props.theme.scrollbarThumbColor};  
   }
 `;

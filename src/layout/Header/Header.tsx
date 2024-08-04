@@ -3,11 +3,11 @@ import { setTheme, ThemeStateContext } from 'contexts/ThemeStateContext';
 import { Button, SearchInput } from 'components';
 import { LogoLink } from 'components/styled';
 import { Logo, StyledHeader } from './Header.styled';
-import { MoonIcon, PlusCircleIcon } from 'assets/icons';
+import { MoonIcon, SunIcon, PlusCircleIcon } from 'assets/icons';
 import { ThemeName } from 'types/themes';
 
 function Header() {
-  const { setThemeState } = useContext(ThemeStateContext)!;
+  const { themeState, setThemeState } = useContext(ThemeStateContext)!;
 
   function handleOnThemeClick() {
     setThemeState(prevState => {
@@ -23,7 +23,10 @@ function Header() {
       <LogoLink to="/">graa.io</LogoLink>
     </Logo>
     <SearchInput $width={410} placeholder="Search Items, Collections and accounts" />
-    <Button $icon={<MoonIcon />} onClick={handleOnThemeClick} />
+    <Button
+      $icon={themeState.themeName === ThemeName.Dark ? <MoonIcon /> : <SunIcon />}
+      onClick={handleOnThemeClick}
+    />
     <Button $icon={<PlusCircleIcon />}>Connect wallet</Button>
   </StyledHeader>;
 }

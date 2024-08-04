@@ -7,6 +7,7 @@ import plusCircleIcon from './plus-circle.svg';
 import reloadIcon from './reload.svg';
 import searchIcon from './search.svg';
 import shareIcon from './share.svg';
+import sunIcon from './sun.svg';
 import telegramIcon from './telegram.svg';
 import tonIcon from './ton.svg';
 import tonCircleIcon from './ton-circle.svg';
@@ -24,6 +25,7 @@ import PlusCircleIcon from './plus-circle.svg?react';
 import ReloadIcon from './reload.svg?react';
 import SearchIcon from './search.svg?react';
 import ShareIcon from './share.svg?react';
+import SunIcon from './sun.svg?react';
 import TelegramIcon from './telegram.svg?react';
 import TonIcon from './ton.svg?react';
 import TonCircleIcon from './ton-circle.svg?react';
@@ -43,6 +45,7 @@ export {
   reloadIcon,
   searchIcon,
   shareIcon,
+  sunIcon,
   telegramIcon,
   tonIcon,
   tonCircleIcon,
@@ -60,6 +63,7 @@ export {
   ReloadIcon,
   SearchIcon,
   ShareIcon,
+  SunIcon,
   TelegramIcon,
   TonIcon,
   TonCircleIcon,
