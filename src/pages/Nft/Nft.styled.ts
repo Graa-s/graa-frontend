@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { Badge } from 'components/styled';
-import { border, borderRadius } from 'constants/styled';
 
 export const Content = styled.main`
   margin: 35px 53px;
@@ -14,7 +13,7 @@ export const ImageWrapper = styled.div`
 `;
 
 export const NftImage = styled.img`
-  border-radius: ${borderRadius}px;
+  border-radius: ${props => props.theme.borderRadius}px;
 `;
 
 export const NftBadge = styled(Badge)`
@@ -42,8 +41,8 @@ export const SaleStatus = styled.span`
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  border: ${border};
-  border-radius: ${borderRadius}px;
+  border: ${props => props.theme.border};
+  border-radius: ${props => props.theme.borderRadius}px;
   font-weight: 600;
   text-transform: uppercase;
   cursor: default;
@@ -51,9 +50,9 @@ export const SaleStatus = styled.span`
 
 export const NftMain = styled.span`
   padding: 20px;
-  border: ${border};
+  border: ${props => props.theme.border};
   border-bottom: none;
-  border-radius: ${borderRadius + 8}px ${borderRadius + 8}px 0 0;
+  border-radius: ${({ theme }) => `${theme.borderRadius + 8}px ${theme.borderRadius + 8}px 0 0`};
 `;
 
 export const NftNameWrapper = styled.h2`
@@ -67,8 +66,8 @@ export const NftNameWrapper = styled.h2`
 export const ActionButtonWrapper = styled.div`
   margin-top: -20px;
   padding: 20px;
-  border: ${border};
-  border-radius: 0 0 ${borderRadius + 8}px ${borderRadius + 8}px;
+  border: ${props => props.theme.border};
+  border-radius: ${({ theme }) => `0 0 ${theme.borderRadius + 8}px ${theme.borderRadius + 8}px`};
 `;
 
 export const PropertiesTitle = styled.h3`

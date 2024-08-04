@@ -1,8 +1,5 @@
-import { Button } from 'components/styled';
-import { useRef, useState } from 'react';
-import { Popup } from 'components';
-import type { PropsWithChildren } from 'react';
-import type { ButtonProps } from 'components/styled';
+import { useState, useRef, type PropsWithChildren } from 'react';
+import { Button, Popup, type ButtonProps } from 'components';
 
 export type Props = PropsWithChildren<{
   buttonProps: PropsWithChildren<ButtonProps>,

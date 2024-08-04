@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Footer, Header } from 'layout';
+import { Button, Property } from 'components';
 import {
   Content, ImageWrapper, NftImage,
   NftBadge, NftInfo, SaleStatusWrapper,
@@ -7,9 +8,8 @@ import {
   ActionButtonWrapper, PropertiesTitle,
   PropertiesList,
 } from './Nft.styled';
-import { Button, VerifiedIcon } from 'components/styled';
-import { shareIcon, plusIcon, TonIcon } from 'assets/icons';
-import Property from 'components/Property';
+import { VerifiedIcon } from 'components/styled';
+import { ShareIcon, PlusIcon, TonIcon } from 'assets/icons';
 
 function Nft() {
   // ToDo
@@ -35,7 +35,7 @@ function Nft() {
       <NftInfo>
         <SaleStatusWrapper>
           <SaleStatus>{saleStatusText}</SaleStatus>
-          {<Button $icon={shareIcon} onClick={currentUrlToClipboard} />}
+          {<Button $icon={<ShareIcon />} onClick={currentUrlToClipboard} />}
         </SaleStatusWrapper>
 
         <NftMain>
@@ -46,7 +46,7 @@ function Nft() {
         </NftMain>
 
         <ActionButtonWrapper>
-          <Button $variant="colored" $icon={plusIcon} $block>{actionButtonText}</Button>
+          <Button $variant="colored" $icon={<PlusIcon />} $block>{actionButtonText}</Button>
         </ActionButtonWrapper>
 
         <Property as={Link} to="/" title="Owner" subtitle="EQAA..hxl3" icon/>

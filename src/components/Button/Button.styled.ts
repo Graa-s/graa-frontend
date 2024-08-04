@@ -1,12 +1,11 @@
-import styled, { css } from 'styled-components';
-import { border, borderRadius } from 'constants/styled';
 import { Link } from 'react-router-dom';
-import { AnchorHTMLAttributes, ButtonHTMLAttributes } from 'react';
+import styled, { css } from 'styled-components';
+import type { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from 'react';
 
 export type Props = {
   $variant?: 'outlined' | 'colored';
   $color?: 'blue' | 'black' | 'green';
-  $icon?: string,
+  $icon?: ReactNode,
   $block?: boolean,
   href?: string,
   to?: string
@@ -14,7 +13,7 @@ export type Props = {
   & ButtonHTMLAttributes<HTMLButtonElement>
   & AnchorHTMLAttributes<HTMLAnchorElement>;
 
-export default styled.button.attrs<Props>((props) => {
+export const StyledButton = styled.button.attrs<Props>(props => {
   const as = props.to
     ? Link
     : props.href
@@ -36,24 +35,23 @@ export default styled.button.attrs<Props>((props) => {
   justify-content: center;
   align-items: center;
   gap: 5px;
-  border: ${border};
-  border-radius: ${borderRadius}px;
+  border: ${props => props.theme.border};
+  border-radius: ${props => props.theme.borderRadius}px;
   background: none;
   text-decoration: none;
   font-family: inherit;
   font-size: 16px;
   letter-spacing: inherit;
   cursor: pointer;
-  transition: all 200ms ease-in-out;
 
   &:hover {
-    background-color: #F4F4F4;
+    background-color: ${props => props.theme.hoverBackgroundColor};
   }
   
   ${props => props.$block && 'width: 100%'};
 
   ${props => props.$variant === 'outlined' && css`
-    color: black;
+    color: ${props => props.theme.color};
     font-weight: 500;
   `}
   
@@ -69,12 +67,4 @@ export default styled.button.attrs<Props>((props) => {
       background-color: #268EFF;
     }
   `}
-
-  &:before {
-    ${props => props.$icon && 'content: \'\';'}
-    width: 28px;
-    height: 28px;
-    display: inline-block;
-    ${(props) => props.$icon && `background: url(${props.$icon}) center no-repeat;`}
-  }
 `;

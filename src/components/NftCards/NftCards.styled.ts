@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { borderRadius } from 'constants/styled.ts';
 
 export const CardsList = styled.ul`
   margin: 35px 53px 0;
@@ -48,16 +47,16 @@ export const DropdownLink = styled.a`
   transition: all 200ms ease-in-out;
   
   :first-child > & {
-    border-top-left-radius: ${borderRadius}px;
-    border-top-right-radius: ${borderRadius}px;
+    border-top-left-radius: ${props => props.theme.borderRadius}px;
+    border-top-right-radius: ${props => props.theme.borderRadius}px;
   }
 
   :last-child > & {
-    border-bottom-left-radius: ${borderRadius}px;
-    border-bottom-right-radius: ${borderRadius}px;
+    border-bottom-left-radius: ${props => props.theme.borderRadius}px;
+    border-bottom-right-radius: ${props => props.theme.borderRadius}px;
   }
 
   &:hover {
-    background-color: #F4F4F4;
+    background-color: ${props => props.theme.hoverBackgroundColor};
   }
 `;

@@ -1,8 +1,7 @@
-import { DropdownFromButton, SearchInput } from 'components';
+import { Button, DropdownFromButton, SearchInput } from 'components';
 import NftCard from './NftCard';
-import { Button } from 'components/styled';
 import { CardsList, DropdownItem, DropdownLink, Heading, Toolbar } from './NftCards.styled';
-import { flipIcon, viewIcon } from 'assets/icons';
+import { FlipIcon, ViewIcon } from 'assets/icons';
 import type Nft from 'types/Nft';
 
 export type Props = { items: Nft[] };
@@ -14,7 +13,7 @@ function NftCards(props: Props) {
       <SearchInput $width={400} placeholder="Name or description" />
 
       <DropdownFromButton buttonProps={{
-        $icon: viewIcon,
+        $icon: <ViewIcon />,
         children: 'Sort',
       }}>
         <ul>
@@ -27,7 +26,7 @@ function NftCards(props: Props) {
         </ul>
       </DropdownFromButton>
 
-      <Button $icon={flipIcon}>Refresh metadata</Button>
+      <Button $icon={<FlipIcon />}>Refresh metadata</Button>
     </Toolbar>
 
     <CardsList>

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { borderRadius, transitionDuration } from 'constants/styled';
+import type { Theme } from 'types/themes';
 
-export const StyledPopup = styled.div<{ $transitionDuration: typeof transitionDuration }>`
+export const StyledPopup = styled.div<{ $transitionDuration: Theme['transitionDuration'] }>`
   position: absolute;
   right: 0;
   top: calc(100% + 5px);
@@ -9,8 +9,8 @@ export const StyledPopup = styled.div<{ $transitionDuration: typeof transitionDu
   width: max-content;
   display: none;
   border: 1px solid #0000000D;
-  border-radius: ${borderRadius}px;
-  background-color: white;
+  border-radius: ${props => props.theme.borderRadius}px;
+  background-color: ${props => props.theme.backgroundColor};
   box-shadow: 0 4px 50px 0 #00000040;
 
   &.enter {

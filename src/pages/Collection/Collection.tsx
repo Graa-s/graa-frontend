@@ -1,6 +1,5 @@
 import { Footer, Header } from 'layout';
-import { NftCards } from 'components';
-import CollectionInfo from 'components/CollectionInfo';
+import { CollectionInfo, NftCards } from 'components';
 import type Nft from 'types/Nft';
 
 const sampleItem: Nft = {

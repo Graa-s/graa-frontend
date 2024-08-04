@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { border, borderRadius } from 'constants/styled';
+import { ThemeName } from 'types/themes';
 
 export const StyledInfo = styled.div`
   margin: 35px 50px 0;
@@ -7,12 +7,15 @@ export const StyledInfo = styled.div`
   display: flex;
   align-items: center;
   gap: 15px;
-  border: ${border};
-  border-radius: ${borderRadius}px;
+  border-radius: ${props => props.theme.borderRadius}px;
+  ${props => {
+    if (props.theme.themeName === ThemeName.Light) return 'background-color: #F8F8F8';
+    else return `border: ${ props.theme.border}`;
+  }};
 `;
 
 export const CollectionImage = styled.img`
-  border-radius: ${borderRadius}px;
+  border-radius: ${props => props.theme.borderRadius}px;
   object-fit: cover;
 `;
 

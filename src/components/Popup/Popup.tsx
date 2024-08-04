@@ -1,8 +1,8 @@
 import { useRef, useEffect } from 'react';
 import { CSSTransition } from 'react-transition-group';
+import { useTheme } from 'styled-components';
 import { useClickOutside } from 'hooks';
 import { StyledPopup } from './Popup.styled';
-import { transitionDuration } from 'constants/styled';
 import type { PropsWithChildren, Dispatch, SetStateAction, RefObject } from 'react';
 
 export type Props = PropsWithChildren<{
@@ -16,6 +16,7 @@ function Popup(props: Props) {
 
   const popupRef = useRef<HTMLDivElement | null>(null);
 
+  const { transitionDuration } = useTheme();
   useClickOutside(containerRef, () => setOpened(false));
 
   useEffect(() => {

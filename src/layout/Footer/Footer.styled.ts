@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { border } from 'constants/styled';
 
 export const StyledFooter = styled.footer`
   margin-top: 110px;
@@ -7,7 +6,7 @@ export const StyledFooter = styled.footer`
   display: grid;
   grid-template-columns: 1fr auto;
   grid-template-rows: auto 1fr auto;
-  border-top: ${border};
+  border-top: ${props => props.theme.border};
 `;
 
 export const FooterText = styled.p`

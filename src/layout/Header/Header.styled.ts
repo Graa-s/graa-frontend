@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { border } from 'constants/styled';
 
 export const StyledHeader = styled.header`
   padding-inline: 53px;
@@ -7,7 +6,7 @@ export const StyledHeader = styled.header`
   display: flex;
   align-items: center;
   gap: 20px;
-  border-bottom: ${border};
+  border-bottom: ${props => props.theme.border};
 `;
 
 export const Logo = styled.h1`

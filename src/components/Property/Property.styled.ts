@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components';
-import { border, borderRadius } from 'constants/styled';
 import { userIcon } from 'assets/icons';
 import type { LinkProps } from 'react-router-dom';
 
@@ -13,10 +12,10 @@ export const StyledProperty = styled.div<StyledPropertyProps>`
   grid-template-columns: auto 1fr auto;
   align-items: center;
   gap: 10px;
-  border: ${border};
-  border-radius: ${borderRadius}px;
+  border: ${props => props.theme.border};
+  border-radius: ${props => props.theme.borderRadius}px;
   text-decoration: none;
-  color: black;
+  color: ${props => props.theme.color};
 `;
 
 export type PropertyIconProps = { $icon?: string | boolean };

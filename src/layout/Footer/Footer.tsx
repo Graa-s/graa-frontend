@@ -2,8 +2,9 @@ import {
   FooterCopyright, FooterText,
   Social, StyledFooter, TonReference,
 } from 'layout/Footer/Footer.styled';
-import { Button, LogoLink } from 'components/styled';
-import { telegramIcon, TonCircleIcon } from 'assets/icons';
+import { Button } from 'components';
+import { LogoLink } from 'components/styled';
+import { TelegramIcon, TonCircleIcon } from 'assets/icons';
 
 function Footer() {
   return <StyledFooter>
@@ -12,7 +13,7 @@ function Footer() {
       NFTs.</FooterText>
 
     <Social>
-      <Button $icon={telegramIcon} href="https://t.me/GraaNFT">Telegram</Button>
+      <Button $icon={<TelegramIcon />} href="https://t.me/GraaNFT">Telegram</Button>
     </Social>
 
     <FooterCopyright>

@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { borderRadius } from 'constants/styled';
 import { Link } from 'react-router-dom';
 
 export const NftCardLink = styled(Link)`
@@ -18,7 +17,7 @@ export const ImageWrapper = styled.div`
 `;
 
 export const NftImage = styled.img`
-  border-radius: ${borderRadius}px;
+  border-radius: ${props => props.theme.borderRadius}px;
   width: 100%;
   height: 100%;
 `;

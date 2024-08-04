@@ -9,7 +9,6 @@ export default createGlobalStyle`
   :root {
     font-family: 'SF Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     letter-spacing: -0.3px;
-    //color-scheme: light dark;
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -18,30 +17,21 @@ export default createGlobalStyle`
 
   *, :after, :before {
     box-sizing: border-box;
+    transition: all ${props => props.theme.transitionTimeout + 1000}ms ease-in-out;
   }
 
   body, h1, h2, h3, h4, h5, h6, p {
     margin: 0;
+  }
+  
+  body {
+    background-color: ${props => props.theme.backgroundColor};
+    color: ${props => props.theme.color}
   }
 
   ul {
     margin: 0;
     padding: 0;
     list-style: none;
-  }
-
-  @media (prefers-color-scheme: light) {
-    //:root {
-    //  color: #213547;
-    //  background-color: #ffffff;
-    //}
-    //
-    //a:hover {
-    //  color: #747bff;
-    //}
-    //
-    //button {
-    //  background-color: #f9f9f9;
-    //}
   }
 `;
