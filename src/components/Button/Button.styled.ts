@@ -1,19 +1,19 @@
 import { Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
-import type { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from 'react';
+import type { AnchorHTMLAttributes, ButtonHTMLAttributes } from 'react';
+import { autoClamp } from 'components/styled/utils';
 
-export type Props = {
+export type StyledButtonProps = {
   $variant?: 'outlined' | 'colored';
   $color?: 'blue' | 'black' | 'green';
-  $icon?: ReactNode,
-  $block?: boolean,
-  href?: string,
-  to?: string
+  $block?: boolean;
+  href?: string;
+  to?: string;
 }
   & ButtonHTMLAttributes<HTMLButtonElement>
   & AnchorHTMLAttributes<HTMLAnchorElement>;
 
-export const StyledButton = styled.button.attrs<Props>(props => {
+export const StyledButton = styled.button.attrs<StyledButtonProps>(props => {
   const as = props.to
     ? Link
     : props.href
@@ -28,10 +28,11 @@ export const StyledButton = styled.button.attrs<Props>(props => {
     $color: props.$color || 'blue',
   };
 })`
-  padding-inline: 11px;
-  height: 50px;
-  min-width: 50px;
-  display: flex;
+  flex: none;
+  padding: 0 ${autoClamp(10, 11)};
+  height: ${autoClamp(39, 50)};
+  min-width: ${autoClamp(39, 50)};
+  display: ${props => props.hidden ? 'none' : 'flex'};
   justify-content: center;
   align-items: center;
   gap: 5px;
@@ -39,10 +40,10 @@ export const StyledButton = styled.button.attrs<Props>(props => {
   border-radius: ${props => props.theme.borderRadius}px;
   background: none;
   text-decoration: none;
-  font-family: inherit;
-  font-size: 16px;
+  font: inherit;
   letter-spacing: inherit;
   cursor: pointer;
+  transition: ${props => props.theme.transition(['color', 'background-color', 'border'])};
 
   &:hover {
     background-color: ${props => props.theme.hoverBackgroundColor};
@@ -53,12 +54,12 @@ export const StyledButton = styled.button.attrs<Props>(props => {
   ${props => props.$variant === 'outlined' && css`
     color: ${props => props.theme.color};
     font-weight: 500;
-  `}
+  `};
   
   ${props => props.$variant === 'colored' && css`
     color: white;
     font-weight: 600;
-  `}
+  `};
 
   ${props => props.$color === 'blue' && props.$variant === 'colored' && css`
     background-color: #007AFF;
@@ -66,5 +67,20 @@ export const StyledButton = styled.button.attrs<Props>(props => {
     &:hover {
       background-color: #268EFF;
     }
-  `}
+  `};
+`;
+
+export const IconWrapper = styled.span<{ $minSize?: number, $maxSize?: number }>`
+  display: inline-flex;
+  
+  > * {
+    ${props => {
+      const size = autoClamp(props.$minSize || 19, props.$maxSize || 28);
+      
+      return css`
+        width: ${size};
+        height: ${size};
+      `;
+    }};
+  }
 `;

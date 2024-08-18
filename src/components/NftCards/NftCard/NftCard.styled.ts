@@ -2,8 +2,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const NftCardLink = styled(Link)`
-  width: 214px;
-  height: 301px;
+  width: 100%;
   padding: 10px 10px 15px 10px;
   display: block;
   text-decoration: none;
@@ -12,8 +11,8 @@ export const NftCardLink = styled(Link)`
 
 export const ImageWrapper = styled.div`
   position: relative;
-  width: 194px;
-  height: 200px;
+  width: 100%;
+  aspect-ratio: 1;
 `;
 
 export const NftImage = styled.img`
@@ -26,13 +25,14 @@ export const Title = styled.h3`
   margin-top: 15px;
   display: flex;
   align-items: center;
-  gap: 3px;
   font-size: 14px;
   font-weight: 700;
 `;
 
 export const Description = styled.p`
+  overflow: hidden;
   margin-top: 10px;
+  max-height: 34px;
   font-size: 14px;
   font-weight: 500;
   color: #63707D;

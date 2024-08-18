@@ -17,16 +17,18 @@ export type Props = {
 function Property({ title, subtitle, icon, ...restProps }: Props) {
   const isLink = restProps.as === 'a' || restProps.as === Link;
 
-  return <StyledProperty {...restProps}>
-    {icon && <PropertyIcon $icon={icon} />}
+  return (
+    <StyledProperty {...restProps}>
+      {icon && <PropertyIcon $icon={icon} />}
 
-    <div>
-      <PropertyTitle>{title}</PropertyTitle>
-      <PropertyValue>{subtitle}</PropertyValue>
-    </div>
+      <div>
+        <PropertyTitle>{title}</PropertyTitle>
+        <PropertyValue>{subtitle}</PropertyValue>
+      </div>
 
-    {isLink && <ArrowBigIcon width={24} height={24} />}
-  </StyledProperty>;
+      {isLink && <ArrowBigIcon width={24} height={24} />}
+    </StyledProperty>
+  );
 }
 
 export default Property;

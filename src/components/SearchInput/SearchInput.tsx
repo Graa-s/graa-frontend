@@ -1,13 +1,33 @@
 import { SearchInputWrapper, SearchInputIcon, StyledSearchInput } from './SearchInput.styled';
-import type { InputHTMLAttributes } from 'react';
+import { ForwardedRef, forwardRef, InputHTMLAttributes } from 'react';
 
-export type Props = { $width?: number } & InputHTMLAttributes<HTMLInputElement>;
+export type Props = {
+  /** @units px */
+  width?: number;
+  /** set width to 100% */
+  block?: boolean;
+  inputAttributes?: InputHTMLAttributes<HTMLInputElement>;
+};
 
-function SearchInput(props: Props) {
-  return <SearchInputWrapper>
-    <SearchInputIcon width={28} height={28} />
-    <StyledSearchInput {...props} />
-  </SearchInputWrapper>;
+function SearchInput(props: Props, ref: ForwardedRef<HTMLDivElement>) {
+  const {
+    width,
+    block,
+    inputAttributes,
+    ...restProps
+  } = props;
+
+  return (
+    <SearchInputWrapper
+      ref={ref}
+      $width={width}
+      $block={block}
+      {...restProps}
+    >
+      <SearchInputIcon width={28} height={28} />
+      <StyledSearchInput {...inputAttributes} />
+    </SearchInputWrapper>
+  );
 }
 
-export default SearchInput;
+export default forwardRef(SearchInput);

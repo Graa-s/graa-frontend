@@ -6,6 +6,7 @@ export default styled.input`
   font: inherit;
   letter-spacing: inherit;
   background: inherit;
+  transition: ${props => props.theme.transition('border')};
 
   &::placeholder {
     color: #55555580;

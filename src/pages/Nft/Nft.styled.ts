@@ -1,8 +1,10 @@
 import styled from 'styled-components';
 import { Badge } from 'components/styled';
+import { container } from 'components/styled/parts';
 
-export const Content = styled.main`
-  margin: 35px 53px;
+export const Content = styled.div.attrs({ as: 'main' })`
+  ${container};
+  padding-block: 35px;
   display: flex;
   gap: 20px 50px;
 `;
@@ -46,6 +48,7 @@ export const SaleStatus = styled.span`
   font-weight: 600;
   text-transform: uppercase;
   cursor: default;
+  transition: ${props => props.theme.transition('border')};
 `;
 
 export const NftMain = styled.span`
@@ -53,6 +56,7 @@ export const NftMain = styled.span`
   border: ${props => props.theme.border};
   border-bottom: none;
   border-radius: ${({ theme }) => `${theme.borderRadius + 8}px ${theme.borderRadius + 8}px 0 0`};
+  transition: ${props => props.theme.transition('border')};
 `;
 
 export const NftNameWrapper = styled.h2`
@@ -68,6 +72,7 @@ export const ActionButtonWrapper = styled.div`
   padding: 20px;
   border: ${props => props.theme.border};
   border-radius: ${({ theme }) => `0 0 ${theme.borderRadius + 8}px ${theme.borderRadius + 8}px`};
+  transition: ${props => props.theme.transition('border')};
 `;
 
 export const PropertiesTitle = styled.h3`

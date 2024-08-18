@@ -1,22 +1,24 @@
 import styled from 'styled-components';
+import { flexSpacing } from 'components/styled/parts';
+import { autoClamp } from 'components/styled/utils';
 
 export const CardsList = styled.ul`
-  margin: 35px 53px 0;
-  display: flex;
+  margin-top: ${autoClamp(20, 35)};
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(214px, 1fr));
   gap: 10px;
   flex-wrap: wrap;
 `;
 
 export const Toolbar = styled.div`
-  margin: 35px 53px 0;
-  display: flex;
+  margin-top: ${autoClamp(20, 35)};
+  ${flexSpacing};
   align-items: center;
-  gap: 20px;
 `;
 
 export const Heading = styled.h2`
   margin-right: auto;
-  font-size: 30px;
+  font-size: ${autoClamp(20, 30)};
   font-weight: 700;
 `;
 
@@ -44,7 +46,7 @@ export const DropdownLink = styled.a`
   color: inherit;
   font-size: 14px;
   font-weight: 500;
-  transition: all 200ms ease-in-out;
+  transition: ${props => props.theme.transition('background-color')};
   
   :first-child > & {
     border-top-left-radius: ${props => props.theme.borderRadius}px;

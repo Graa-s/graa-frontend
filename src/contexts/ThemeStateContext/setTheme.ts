@@ -1,13 +1,13 @@
 import { immutableTheme, lightTheme, darkTheme } from 'constants/themes';
 import { DynamicTheme, Theme, ThemeName } from 'types/themes';
 
-function setTheme(themeName: ThemeName): Theme {
-  let dynamicTheme: DynamicTheme | null = null;
+function setTheme(themeName: ThemeName, overrides?: Partial<Theme>): Theme {
+  let dynamicTheme: DynamicTheme;
 
-  if (themeName === ThemeName.Light) dynamicTheme = lightTheme;
   if (themeName === ThemeName.Dark) dynamicTheme = darkTheme;
+  else dynamicTheme = lightTheme;
 
-  return Object.assign({}, immutableTheme, dynamicTheme);
+  return { ...immutableTheme, ...dynamicTheme, ...overrides };
 }
 
 export default setTheme;

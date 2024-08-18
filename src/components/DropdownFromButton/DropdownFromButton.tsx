@@ -1,25 +1,34 @@
-import { useState, useRef, type PropsWithChildren } from 'react';
-import { Button, Popup, type ButtonProps } from 'components';
+import {
+  useState, useRef,
+  cloneElement, isValidElement,
+} from 'react';
+import { Popup } from 'components';
+import type { PropsWithChildren, ReactElement, ButtonHTMLAttributes } from 'react';
 
 export type Props = PropsWithChildren<{
-  buttonProps: PropsWithChildren<ButtonProps>,
+  button: ReactElement<ButtonHTMLAttributes<HTMLButtonElement>>,
 }>;
 
-function DropdownFromButton({ buttonProps, children }: Props) {
+function DropdownFromButton({ button, children }: Props) {
   const [opened, setOpened] = useState<boolean>(false);
   const dropdownRef = useRef<HTMLDivElement | null>(null);
 
-  return <span ref={dropdownRef}>
-    <Button {...buttonProps} onClick={() => setOpened(prevState => !prevState)} />
+  const validButton = isValidElement(button);
+  const buttonProps = { onClick: () => setOpened(prevState => !prevState) };
 
-    <Popup
-      opened={opened}
-      setOpened={setOpened}
-      containerRef={dropdownRef}
-    >
+  return (
+    <span ref={dropdownRef}>
+      {validButton && cloneElement(button, buttonProps)}
+
+      <Popup
+        opened={opened}
+        setOpened={setOpened}
+        containerRef={dropdownRef}
+      >
       {children}
     </Popup>
-  </span>;
+  </span>
+  );
 }
 
 export default DropdownFromButton;

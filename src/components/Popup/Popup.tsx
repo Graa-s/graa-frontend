@@ -25,9 +25,11 @@ function Popup(props: Props) {
     containerRef.current.style.position = 'relative';
   }, [containerRef]);
 
-  return <CSSTransition nodeRef={popupRef} in={opened} timeout={transitionDuration}>
-    <StyledPopup ref={popupRef} {...restProps} $transitionDuration={transitionDuration} />
-  </CSSTransition>;
+  return (
+    <CSSTransition nodeRef={popupRef} in={opened} timeout={transitionDuration}>
+      <StyledPopup ref={popupRef} {...restProps} $transitionDuration={transitionDuration} />
+    </CSSTransition>
+  );
 }
 
 export default Popup;

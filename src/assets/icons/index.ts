@@ -1,5 +1,6 @@
 import arrowIcon from './arrow.svg';
 import arrowBigIcon from './arrow-big.svg';
+import crossIcon from './cross.svg';
 import flipIcon from './flip.svg';
 import moonIcon from './moon.svg';
 import plusIcon from './plus.svg';
@@ -18,6 +19,7 @@ import viewIcon from './view.svg';
 
 import ArrowIcon from './arrow.svg?react';
 import ArrowBigIcon from './arrow-big.svg?react';
+import CrossIcon from './cross.svg?react';
 import FlipIcon from './flip.svg?react';
 import MoonIcon from './moon.svg?react';
 import PlusIcon from './plus.svg?react';
@@ -38,6 +40,7 @@ import ViewIcon from './view.svg?react';
 export {
   arrowIcon,
   arrowBigIcon,
+  crossIcon,
   flipIcon,
   moonIcon,
   plusIcon,
@@ -56,6 +59,7 @@ export {
 
   ArrowIcon,
   ArrowBigIcon,
+  CrossIcon,
   FlipIcon,
   MoonIcon,
   PlusIcon,

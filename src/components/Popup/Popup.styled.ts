@@ -12,6 +12,10 @@ export const StyledPopup = styled.div<{ $transitionDuration: Theme['transitionDu
   border-radius: ${props => props.theme.borderRadius}px;
   background-color: ${props => props.theme.backgroundColor};
   box-shadow: 0 4px 50px 0 #00000040;
+  transition: ${props => props.theme.transition(
+    ['opacity', 'transform', 'background-color'],
+    props.$transitionDuration,
+  )};
 
   &.enter {
     transform: scale(1.05);
@@ -22,7 +26,6 @@ export const StyledPopup = styled.div<{ $transitionDuration: Theme['transitionDu
   &.enter-active {
     transform: scale(1);
     opacity: 1;
-    transition: all ${props => props.$transitionDuration}ms ease-in-out;
   }
 
   &.enter-done {
@@ -38,7 +41,6 @@ export const StyledPopup = styled.div<{ $transitionDuration: Theme['transitionDu
   &.exit-active {
     transform: scale(0.9);
     opacity: 0;
-    transition: all ${props => props.$transitionDuration}ms ease-in-out;
   }
 
   &.exit-done {

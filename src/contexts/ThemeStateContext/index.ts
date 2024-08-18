@@ -3,5 +3,6 @@ import ThemeStateContext from './ThemeStateContext';
 import ThemeStateProvider from './ThemeStateProvider';
 import type { ThemeStateContextType } from './ThemeStateContext';
 
-export { setTheme, ThemeStateContext, ThemeStateProvider };
+export default ThemeStateContext;
+export { setTheme, ThemeStateProvider };
 export type { ThemeStateContextType };

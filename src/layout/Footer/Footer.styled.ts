@@ -1,12 +1,23 @@
 import styled from 'styled-components';
+import { container } from 'components/styled/parts';
+import { autoClamp } from 'components/styled/utils';
 
 export const StyledFooter = styled.footer`
-  margin-top: 110px;
-  padding: 27px 53px 35px;
+  margin-top: ${autoClamp(50, 110)};
+  border-top: ${props => props.theme.border};
+  transition: ${props => props.theme.transition('border')};
+`;
+
+export const FooterContainer = styled.div`
+  ${container};
+  padding-top: ${autoClamp(13, 27)};
   display: grid;
   grid-template-columns: 1fr auto;
   grid-template-rows: auto 1fr auto;
-  border-top: ${props => props.theme.border};
+
+  @media (max-width: ${props => props.theme.breakpoints.sm}px) {
+    display: block;
+  }
 `;
 
 export const FooterText = styled.p`
@@ -19,17 +30,28 @@ export const FooterText = styled.p`
 export const Social = styled.ul`
   grid-column: 2;
   grid-row: 1 / span 3;
-  margin-top: 36px;
+  margin-top: ${autoClamp(15, 36)};
+  width: fit-content;
   display: flex;
   flex-direction: column;
   gap: 10px;
+  
+  @media (max-width: ${props => props.theme.breakpoints.sm}px) {
+    margin-bottom: 20px;
+  }
 `;
 
 export const FooterCopyright = styled.div`
-  margin-top: 35px;
+  ${container};
+  padding-block: ${autoClamp(20, 35)};
   display: flex;
   align-items: center;
   color: #63707D;
+
+  @media (max-width: ${props => props.theme.breakpoints.sm}px) {
+    border-top: ${props => props.theme.border};
+    transition: ${props => props.theme.transition('border')};
+  }
 `;
 
 export const TonReference = styled.div`

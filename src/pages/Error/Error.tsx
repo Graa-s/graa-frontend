@@ -1,14 +1,17 @@
-import { StyledError } from './Error.styled';
 import { Footer, Header } from 'layout';
+import { StyledError } from './Error.styled';
+import { Container } from 'components/styled';
 
 function Error() {
   return <>
     <Header />
 
-    <StyledError>
-      <span>404</span>
-      <p>Page not found</p>
-    </StyledError>
+    <Container>
+      <StyledError>
+        <span>404</span>
+        <p>Page not found</p>
+      </StyledError>
+    </Container>
 
     <Footer />
   </>;

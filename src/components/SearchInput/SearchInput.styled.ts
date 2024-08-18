@@ -1,31 +1,41 @@
 import styled from 'styled-components';
 import { Input } from 'components/styled';
 import { SearchIcon } from 'assets/icons';
+import { autoClamp } from 'components/styled/utils';
 
-export const SearchInputWrapper = styled.div`
+export type SearchInputWrapperProps = {
+  $width?: number;
+  $block?: boolean;
+};
+
+export const SearchInputWrapper = styled.div<SearchInputWrapperProps>`
   position: relative;
+  ${props => props.$width && `width: ${props.$width}px`};
+  ${props => props.$block && 'width: 100%'};
 `;
 
-export const StyledSearchInput = styled(Input)<{ $width?: number }>`
-  padding: 15px 10px 15px 43px;
-  ${(props) => props.$width && `width: ${props.$width}px;`}
-  font-size: 16px;
+export const StyledSearchInput = styled(Input)`
+  padding-inline: 43px 10px;
+  padding-block: ${autoClamp(10.3, 15)}; 
+  width: 100%;
   font-weight: 500;
   color: inherit;
-  
+
   &::placeholder {
     color: ${props => props.theme.hintColor};
+    transition: ${props => props.theme.transition('color')};
   }
 `;
 
 export const SearchInputIcon = styled(SearchIcon)`
   position: absolute;
   top: 50%;
-  left: 10px;
+  left: ${autoClamp(20, 10)};
   transform: translateY(-50%);
-  width: 28px;
-  height: 28px;
+  width: ${autoClamp(19, 28)};
+  height: ${autoClamp(19, 28)};
   display: inline-block;
   pointer-events: none;
   color: ${props => props.theme.hintColor};
+  transition: ${props => props.theme.transition('color')};
 `;

@@ -1,13 +1,15 @@
 import { useContext } from 'react';
-import { setTheme, ThemeStateContext } from 'contexts/ThemeStateContext';
-import { Button, SearchInput } from 'components';
+import ThemeStateContext, { setTheme } from 'contexts/ThemeStateContext';
+import { Button, SearchToolbar } from 'components';
 import { LogoLink } from 'components/styled';
-import { Logo, StyledHeader } from './Header.styled';
+import { HeaderContainer, StyledHeader, Logo } from './Header.styled';
+import { useMediaQuery } from 'hooks';
 import { MoonIcon, SunIcon, PlusCircleIcon } from 'assets/icons';
 import { ThemeName } from 'types/themes';
 
 function Header() {
   const { themeState, setThemeState } = useContext(ThemeStateContext)!;
+  const isWideScreen = useMediaQuery(`(min-width: ${themeState.breakpoints.sm}px)`);
 
   function handleOnThemeClick() {
     setThemeState(prevState => {
@@ -18,17 +20,31 @@ function Header() {
     });
   }
 
-  return <StyledHeader>
-    <Logo>
-      <LogoLink to="/">graa.io</LogoLink>
-    </Logo>
-    <SearchInput $width={410} placeholder="Search Items, Collections and accounts" />
-    <Button
-      $icon={themeState.themeName === ThemeName.Dark ? <MoonIcon /> : <SunIcon />}
-      onClick={handleOnThemeClick}
-    />
-    <Button $icon={<PlusCircleIcon />}>Connect wallet</Button>
-  </StyledHeader>;
+  const logo = <Logo><LogoLink to="/">graa.io</LogoLink></Logo>;
+
+  const buttons = (
+    <>
+      <Button
+        icon={themeState.themeName === ThemeName.Dark ? <MoonIcon /> : <SunIcon />}
+        onClick={handleOnThemeClick}
+      />
+
+      <Button icon={<PlusCircleIcon />}>Connect {isWideScreen && 'wallet'}</Button>
+    </>
+  );
+
+  return (
+    <StyledHeader>
+      <HeaderContainer>
+        <SearchToolbar
+          width={410}
+          inputAttributes={{ placeholder: 'Search Items, Collections and accounts' }}
+          leftCollapsibleContent={logo}
+          rightCollapsibleContent={buttons}
+        />
+      </HeaderContainer>
+    </StyledHeader>
+  );
 }
 
 export default Header;

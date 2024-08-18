@@ -16,6 +16,7 @@ export const StyledProperty = styled.div<StyledPropertyProps>`
   border-radius: ${props => props.theme.borderRadius}px;
   text-decoration: none;
   color: ${props => props.theme.color};
+  transition: ${props => props.theme.transition(['border', 'color'])};
 `;
 
 export type PropertyIconProps = { $icon?: string | boolean };

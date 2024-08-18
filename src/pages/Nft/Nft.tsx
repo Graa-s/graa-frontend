@@ -12,8 +12,8 @@ import { VerifiedIcon } from 'components/styled';
 import { ShareIcon, PlusIcon, TonIcon } from 'assets/icons';
 
 function Nft() {
-  // ToDo
-  const saleStatusText: string = 'For sale';
+  // ToDo from backend
+  const saleStatusText: string = 'On sale';
   const actionButtonText: string = 'Put on sale';
 
   const currentUrlToClipboard = () => {
@@ -35,7 +35,7 @@ function Nft() {
       <NftInfo>
         <SaleStatusWrapper>
           <SaleStatus>{saleStatusText}</SaleStatus>
-          {<Button $icon={<ShareIcon />} onClick={currentUrlToClipboard} />}
+          {<Button icon={<ShareIcon />} onClick={currentUrlToClipboard} />}
         </SaleStatusWrapper>
 
         <NftMain>
@@ -46,7 +46,7 @@ function Nft() {
         </NftMain>
 
         <ActionButtonWrapper>
-          <Button $variant="colored" $icon={<PlusIcon />} $block>{actionButtonText}</Button>
+          <Button $variant="colored" icon={<PlusIcon />} $block>{actionButtonText}</Button>
         </ActionButtonWrapper>
 
         <Property as={Link} to="/" title="Owner" subtitle="EQAA..hxl3" icon/>

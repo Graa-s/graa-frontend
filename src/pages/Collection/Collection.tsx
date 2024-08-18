@@ -1,5 +1,6 @@
-import { Footer, Header } from 'layout';
+import { Header, Footer } from 'layout';
 import { CollectionInfo, NftCards } from 'components';
+import { Container } from 'components/styled';
 import type Nft from 'types/Nft';
 
 const sampleItem: Nft = {
@@ -16,8 +17,13 @@ const items: Nft[] = Array(9).fill(sampleItem);
 function Collection() {
   return <>
     <Header />
-    <CollectionInfo />
-    <NftCards items={items} />
+    <Container>
+      <CollectionInfo />
+    </Container>
+
+    <Container>
+      <NftCards items={items} />
+    </Container>
     <Footer />
   </>;
 }
