@@ -127,7 +127,7 @@ Error generating stack: `+i.message+`
   
   background-color: ${e=>e.theme.themeName===Ft.Light?"#F8F8F8":"hsla(0, 0%, 24%, 0.1)"};
   
-  transition: ${e=>e.theme.transition(["background-color","border"])};
+  transition: ${e=>e.theme.transition(["background-color","padding"])};
   
   @media (max-width: ${e=>e.theme.breakpoints.lg}px) {
     padding: 0;

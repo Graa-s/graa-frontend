@@ -47,6 +47,8 @@ export const FooterCopyright = styled.div`
   display: flex;
   align-items: center;
   color: #63707D;
+  border-top: ${props => props.theme.border};
+  border-width: 0;
 
   @media (max-width: ${props => props.theme.breakpoints.sm}px) {
     border-top: ${props => props.theme.border};

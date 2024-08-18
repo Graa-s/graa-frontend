@@ -15,7 +15,7 @@ export const StyledInfo = styled.div`
     : 'hsla(0, 0%, 24%, 0.1)'
   };
   
-  transition: ${props => props.theme.transition(['background-color', 'border'])};
+  transition: ${props => props.theme.transition(['background-color', 'padding'])};
   
   @media (max-width: ${props => props.theme.breakpoints.lg}px) {
     padding: 0;
