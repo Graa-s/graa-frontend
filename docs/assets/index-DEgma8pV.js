@@ -488,6 +488,8 @@ Error generating stack: `+i.message+`
   display: flex;
   align-items: center;
   color: #63707D;
+  border-top: ${e=>e.theme.border};
+  border-width: 0;
 
   @media (max-width: ${e=>e.theme.breakpoints.sm}px) {
     border-top: ${e=>e.theme.border};
