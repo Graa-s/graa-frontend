@@ -10,7 +10,7 @@ import {
   PropertiesList, PropertiesTitle, SaleStatus, SaleStatusWrapper,
 } from './Nft.styled';
 import { VerifiedIcon } from 'components/styled';
-import { ArrowIcon, PlusIcon, ShareIcon, TonIcon } from 'assets/icons';
+import { ArrowIcon, PlusIcon, ShareIcon } from 'assets/icons';
 import { shortenAddress } from 'utils';
 import { ButtonColor, ButtonVariant } from 'components/Button/types';
 import duckIcon from 'assets/duck-logo.gif';

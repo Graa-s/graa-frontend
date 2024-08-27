@@ -1,6 +1,6 @@
 import { Badge, VerifiedIcon } from 'components/styled';
 import { Description, ImageWrapper, NftCardLink, NftImage, Title } from './NftCard.styled';
-import { TonIcon } from 'assets/icons';
+// import { TonIcon } from 'assets/icons';
 import duckIcon from 'assets/duck-logo.gif';
 import type Nft from 'types/Nft';
 
