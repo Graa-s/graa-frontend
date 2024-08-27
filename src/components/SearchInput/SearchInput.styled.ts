@@ -15,16 +15,8 @@ export const SearchInputWrapper = styled.div<SearchInputWrapperProps>`
 `;
 
 export const StyledSearchInput = styled(Input)`
-  padding-inline: 43px 10px;
-  padding-block: ${autoClamp(10.3, 15)}; 
+  padding-left: 43px;
   width: 100%;
-  font-weight: 500;
-  color: inherit;
-
-  &::placeholder {
-    color: ${props => props.theme.hintColor};
-    transition: ${props => props.theme.transition('color')};
-  }
 `;
 
 export const SearchInputIcon = styled(SearchIcon)`

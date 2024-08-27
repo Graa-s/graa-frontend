@@ -51,6 +51,7 @@ export const FooterCopyright = styled.div`
   border-width: 0;
 
   @media (max-width: ${props => props.theme.breakpoints.sm}px) {
+    justify-content: space-between;
     border-top: ${props => props.theme.border};
     transition: ${props => props.theme.transition('border')};
   }

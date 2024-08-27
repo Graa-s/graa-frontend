@@ -13,12 +13,11 @@ function DropdownFromButton({ button, children }: Props) {
   const [opened, setOpened] = useState<boolean>(false);
   const dropdownRef = useRef<HTMLDivElement | null>(null);
 
-  const validButton = isValidElement(button);
   const buttonProps = { onClick: () => setOpened(prevState => !prevState) };
 
   return (
     <span ref={dropdownRef}>
-      {validButton && cloneElement(button, buttonProps)}
+      {isValidElement(button) && cloneElement(button, buttonProps)}
 
       <Popup
         opened={opened}

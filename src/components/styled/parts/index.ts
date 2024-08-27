@@ -1,4 +1,15 @@
 import container from './container';
+import disclosureTransition from './disclosureTransition';
 import flexSpacing from './flexSpacing';
+import input from './input';
 
-export { container, flexSpacing };
+import type { Props as DisclosureTransitionProps } from './disclosureTransition';
+
+export {
+  container,
+  disclosureTransition,
+  flexSpacing,
+  input,
+};
+
+export type { DisclosureTransitionProps };

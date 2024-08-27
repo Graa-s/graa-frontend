@@ -13,13 +13,15 @@ export type Props = {
   collapseWidth?: number;
   leftCollapsibleContent?: ReactNode;
   rightCollapsibleContent?: ReactNode;
-} & SearchInputProps;
+  searchWidth?: SearchInputProps['width'];
+} & Omit<SearchInputProps, 'width'>;
 
 function SearchToolbar(props: Props) {
   const {
     collapseWidth = 1200,
     leftCollapsibleContent,
     rightCollapsibleContent,
+    searchWidth,
     ...restProps
   } = props;
 
@@ -41,6 +43,7 @@ function SearchToolbar(props: Props) {
       <SearchInputWrapper
         $collapseWidth={collapseWidth}
         $open={open}
+        width={searchWidth}
         {...restProps}
       />
 

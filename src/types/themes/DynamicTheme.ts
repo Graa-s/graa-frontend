@@ -4,6 +4,7 @@ export type DynamicThemeProperties =
   'themeName' |
   'border' |
   'backgroundColor' |
+  'blurredBackgroundColor' |
   'hoverBackgroundColor' |
   'color' |
   'hintColor' |

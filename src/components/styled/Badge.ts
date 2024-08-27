@@ -5,6 +5,7 @@ export default styled.div`
   top: 10px;
   right: 10px;
   padding: 9px 10px;
+  padding: 6px 7px;
   display: flex;
   align-items: center;
   gap: 3px;

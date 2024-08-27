@@ -5,6 +5,7 @@ import {
 import { VerifiedIcon } from 'components/styled';
 import { PropertyTitle, PropertyValue } from 'components/Property';
 import { TonIcon } from 'assets/icons';
+import { shortenAddress } from 'utils';
 
 function CollectionInfo() {
   return (
@@ -23,19 +24,19 @@ function CollectionInfo() {
 
       <CollectionProperties>
         <li>
+          <PropertyTitle>Owner</PropertyTitle>
+          <PropertyValue>{shortenAddress('EQAAhxl3')}</PropertyValue>
+        </li>
+        <li>
+          <PropertyTitle>Address collection</PropertyTitle>
+          <PropertyValue>{shortenAddress('EQAAhxl3')}</PropertyValue>
+        </li>
+        <li>
           <PropertyTitle>Floor price</PropertyTitle>
           <PropertyValue>
             <TonIcon />&nbsp;
             <span>1K</span>
           </PropertyValue>
-        </li>
-        <li>
-          <PropertyTitle>Owner</PropertyTitle>
-          <PropertyValue>EQAA..hxl3</PropertyValue>
-        </li>
-        <li>
-          <PropertyTitle>Address collection</PropertyTitle>
-          <PropertyValue>EQAA..hxl3</PropertyValue>
         </li>
       </CollectionProperties>
     </StyledInfo>

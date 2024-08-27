@@ -7,7 +7,7 @@ export type SearchInputWrapperProps = {
 }
 
 export const SearchInputWrapper = styled(SearchInput).attrs<SearchInputWrapperProps>(
-  props => ({ block: props.$open && true, ...props }),
+  props => ({ block: props.$open, ...props }),
 )`
   @media (max-width: ${props => props.$collapseWidth}px) {
     ${props => !props.$open && 'display: none'};

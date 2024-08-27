@@ -13,7 +13,7 @@ function useClickOutside(ref: RefObject<HTMLElement>, handler: Handler, options?
 
     document.addEventListener('click', handleClickOutside, options);
 
-    return () => document.removeEventListener('click', handleClickOutside);
+    return () => document.removeEventListener('click', handleClickOutside, options);
   }, [ref, handler, options]);
 }
 

@@ -13,6 +13,7 @@ type Theme = {
   border: string;
   /** @units px */
   borderRadius: number;
+  blurredBackgroundColor: string;
   backgroundColor: string;
   hoverBackgroundColor: string;
   color: string;

@@ -40,6 +40,8 @@
       "router": ["./src/router"],
       "types/*": ["./src/types/*"],
       "types": ["./src/types"],
+      "utils/*": ["./src/utils/*"],
+      "utils": ["./src/utils"],
       "@/*": ["./src/*"],
     },
   },

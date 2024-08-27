@@ -6,6 +6,7 @@ export default createGlobalStyle`
   ${scrollbar}
     /**/
   :root {
+    scrollbar-gutter: stable;
     font-family: 'SF Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size: ${autoClamp(14, 16)};
     letter-spacing: -0.3px;
@@ -14,6 +15,12 @@ export default createGlobalStyle`
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background-color: ${props => props.theme.backgroundColor};
+    transition: ${props => props.theme.transition('background-color')};
+    
+    &.modal-opened {
+      background-color: ${props => props.theme.blurredBackgroundColor};
+    }
   }
 
   *, :after, :before {

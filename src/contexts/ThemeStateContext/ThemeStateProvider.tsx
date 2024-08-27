@@ -1,20 +1,23 @@
 import { useEffect, useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 import ThemeStateContext from './ThemeStateContext';
-import setTheme from './setTheme';
+import composeTheme from './composeTheme.ts';
 import { ThemeName, type Theme } from 'types/themes';
 import type { PropsWithChildren } from 'react';
 
 function ThemeStateProvider({ children, ...props }: PropsWithChildren) {
-  const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const isSystemDark = matchMedia('(prefers-color-scheme: dark)').matches;
+  const systemThemeName = ThemeName[isSystemDark ? 'Dark' : 'Light'];
 
-  const initialThemeName = ThemeName[isDark ? 'Dark' : 'Light'];
-  const initialTheme = setTheme(initialThemeName, { transitionDuration: 0 });
+  if (!localStorage.getItem('theme')) localStorage.setItem('theme', systemThemeName);
+
+  const initialThemeName = localStorage.getItem('theme') as ThemeName;
+  const initialTheme = composeTheme(initialThemeName, { transitionDuration: 0 });
 
   const [themeState, setThemeState] = useState<Theme>(initialTheme);
 
   useEffect(() => {
-    setThemeState(setTheme(initialThemeName));
+    setThemeState(composeTheme(initialThemeName));
   }, []); // eslint-disable-line
 
   return (

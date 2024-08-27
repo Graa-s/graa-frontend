@@ -5,9 +5,10 @@ import { autoClamp } from 'components/styled/utils';
 export const StyledInfo = styled.div`
   margin-top: ${autoClamp(20, 35)};
   padding: 20px;
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
-  gap: 15px;
+  gap: 20px 15px;
   border-radius: ${props => props.theme.borderRadius}px;
   
   background-color: ${props => props.theme.themeName === ThemeName.Light
@@ -20,6 +21,8 @@ export const StyledInfo = styled.div`
   @media (max-width: ${props => props.theme.breakpoints.lg}px) {
     padding: 0;
     background-color: transparent;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto;
   }
 `;
 
@@ -56,8 +59,10 @@ export const Description = styled.p`
 export const CollectionProperties = styled.ul`
   display: flex;
   gap: 25px;
-  
+
   @media(max-width: ${props => props.theme.breakpoints.lg}px) {
-    display: none;
+    //justify-self: start;
+    grid-column: span 2;
+    //flex-direction: row-reverse;
   }
 `;

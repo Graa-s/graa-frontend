@@ -14,10 +14,12 @@ export type Props = PropsWithChildren<{
 function Popup(props: Props) {
   const { opened, setOpened, containerRef, ...restProps } = props;
 
-  const popupRef = useRef<HTMLDivElement | null>(null);
+  const popupRef = useRef<HTMLDivElement>(null);
 
   const { transitionDuration } = useTheme();
-  useClickOutside(containerRef, () => setOpened(false));
+  useClickOutside(containerRef, () => {
+    setOpened(false);
+  });
 
   useEffect(() => {
     if (!containerRef.current) return;
